@@ -1,7 +1,10 @@
-import { Button, Card, Table } from "antd";
+import { Button, Card, Table, Modal } from "antd";
 import Header from "../components/header/Header.jsx";
+import { useState } from "react";
+import CreateBill from "../components/cart/CreateBill.jsx";
 
 const CartPage = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const dataSource = [
     {
       key: "1",
@@ -59,12 +62,18 @@ const CartPage = () => {
               <b>Toplam</b>
               <b>592.92₺</b>
             </div>
-            <Button className="mt-4 w-full" type="primary" size="large">
+            <Button
+              className="mt-4 w-full"
+              type="primary"
+              size="large"
+              onClick={() => setIsModalOpen(true)}
+            >
               Sipariş Oluştur
             </Button>
           </Card>
         </div>
       </div>
+      <CreateBill isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen} />
     </>
   );
 };
