@@ -8,7 +8,7 @@ router.get("/get-all", async (req, res) => {
     const products = await Product.find();
     res.status(200).json(products);
   } catch (error) {
-    console.log(error);
+    res.status(400).json(error);
   }
 });
 
@@ -29,7 +29,7 @@ router.put("/update-product", async (req, res) => {
     await Product.findOneAndUpdate({ _id: req.body.productId }, req.body);
     res.status(200).json("Item updated successfully.");
   } catch (error) {
-    console.log(error);
+    res.status(400).json(error);
   }
 });
 
