@@ -1,8 +1,8 @@
-import { Button, Card, Popconfirm, Table, message } from "antd";
-import Header from "../components/header/Header.jsx";
+import { Button, Card, message, Popconfirm, Table } from "antd";
 import { useState } from "react";
-import CreateBill from "../components/cart/CreateBill.jsx";
 import { useDispatch, useSelector } from "react-redux";
+import CreateBill from "../components/cart/CreateBill.jsx";
+import Header from "../components/header/Header.jsx";
 import { PlusCircleOutlined, MinusCircleOutlined } from "@ant-design/icons";
 import { deleteCart, increase, decrease } from "../redux/cartSlice.js";
 
@@ -63,7 +63,7 @@ const CartPage = () => {
               icon={<MinusCircleOutlined />}
               onClick={() => {
                 if (record.quantity === 1) {
-                  if (window.confirm("Ürün Silinsin mi?")) {
+                  if (window.confirm("Ürün Silinsin Mi?")) {
                     dispatch(decrease(record));
                     message.success("Ürün Sepetten Silindi.");
                   }
@@ -84,7 +84,7 @@ const CartPage = () => {
       },
     },
     {
-      title: "Action",
+      title: "Actions",
       render: (_, record) => {
         return (
           <Popconfirm
@@ -129,7 +129,7 @@ const CartPage = () => {
               <span>KDV %{cart.tax}</span>
               <span className="text-red-600">
                 {(cart.total * cart.tax) / 100 > 0
-                  ? `+ ${((cart.total * cart.tax) / 100).toFixed(2)}`
+                  ? `+${((cart.total * cart.tax) / 100).toFixed(2)}`
                   : 0}
                 ₺
               </span>
