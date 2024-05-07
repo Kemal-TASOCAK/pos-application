@@ -16,7 +16,7 @@ router.post("/register", async (req, res) => {
     await newUser.save();
     res.status(200).json("A new user created successfully.");
   } catch (error) {
-    res.status(400).json(error);
+    res.status(500).json(error);
   }
 });
 
@@ -24,7 +24,9 @@ router.post("/register", async (req, res) => {
 router.post("/login", async (req, res) => {
   try {
     const user = await User.findOne({ email: req.body.email });
-    !User && res.status(404).send({ error: "User not found!" });
+    if (!user) {
+      return res.status(404).send({ error: "User not found!" });
+    }
 
     const validPassword = await bcrypt.compare(
       req.body.password,
@@ -37,7 +39,7 @@ router.post("/login", async (req, res) => {
       res.status(200).json(user);
     }
   } catch (error) {
-    res.status(400).json(error);
+    res.status(500).json(error);
   }
 });
 
