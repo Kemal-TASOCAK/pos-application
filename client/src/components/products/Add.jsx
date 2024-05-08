@@ -27,7 +27,7 @@ const Add = ({
           price: Number(values.price),
         },
       ]);
-      setIsAddModalOpen(false);
+      setIsAddModalOpen(false)
     } catch (error) {
       console.log(error);
     }
