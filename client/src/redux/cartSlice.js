@@ -3,8 +3,12 @@ import { createSlice } from "@reduxjs/toolkit";
 const cartSlice = createSlice({
   name: "cart",
   initialState: {
-    cartItems: [],
-    total: 0,
+    cartItems: localStorage.getItem("cart")
+      ? JSON.parse(localStorage.getItem("cart")).cartItems
+      : [],
+    total: localStorage.getItem("cart")
+      ? JSON.parse(localStorage.getItem("cart")).total
+      : 0,
     tax: 8,
   },
   reducers: {
@@ -12,6 +16,7 @@ const cartSlice = createSlice({
       const findCartItem = state.cartItems.find(
         (item) => item._id === action.payload._id
       );
+
       if (findCartItem) {
         findCartItem.quantity = findCartItem.quantity + 1;
       } else {
