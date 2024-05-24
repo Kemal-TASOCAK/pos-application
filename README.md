@@ -1,6 +1,6 @@
 Kullanılan Teknolojiler; <br>
 Editör; Visual Studio Code <br>
-Proje; React, JavaScript <br>
+Proje; React, JavaScript, Html, Css <br>
 Database; MongoDB <br>
 Kütüphane; AntDesign, TailwindCss, React-Router-Dom, Redux-toolkit <br>
 # pos-application
