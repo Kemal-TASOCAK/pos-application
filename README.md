@@ -1,3 +1,8 @@
+Kullanılan Teknolojiler;
+Editör; Visual Studio Code
+Proje; React, JavaScript
+Database; MongoDB
+Kütüphane; AntDesign, TailwindCss, React-Router-Dom, Redux-toolkit
 # pos-application
  pos-application
  
