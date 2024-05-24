@@ -1,8 +1,8 @@
-Kullanılan Teknolojiler;
-Editör; Visual Studio Code
-Proje; React, JavaScript
-Database; MongoDB
-Kütüphane; AntDesign, TailwindCss, React-Router-Dom, Redux-toolkit
+Kullanılan Teknolojiler; <br>
+Editör; Visual Studio Code <br>
+Proje; React, JavaScript <br>
+Database; MongoDB <br>
+Kütüphane; AntDesign, TailwindCss, React-Router-Dom, Redux-toolkit <br>
 # pos-application
  pos-application
  
